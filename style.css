@@ -13,7 +13,7 @@ header{
     border-radius: 5em !important;
     height: 7vh;
     width: 25vw;
-    filter:drop-shadow(1px 1px 1px rgb(145, 144, 144))
+    
 
 }
 .search-bar-group button{
@@ -34,3 +34,22 @@ header{
     background-color: #ff2a51;
     color: #ffffff;
 }
+.content-body{
+    height: 100vh;
+}
+.search-categ input.form-control:focus {
+    box-shadow: none;
+  }
+  .search-categ input {
+  font-size: 25px;
+  }
+  .search-click-effect-active{
+   
+    filter:drop-shadow(2px 2px 2px  #ff2a51);
+  }
+  .search-click-effect-disable{
+   
+    filter:drop-shadow(1px 1px 1px rgb(145, 144, 144));
+   
+    
+  }

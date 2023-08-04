@@ -1,7 +1,36 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 header{
     height: 15vh;
-    background-color: #a8c5d3;
+    background-color: #ffffff;
+    border-bottom:2px solid rgb(227, 221, 221);
 }
 .logo{
-    background-image: ;
+
+}
+.search-bar-group{
+    border-radius: 5em !important;
+    height: 7vh;
+    width: 25vw;
+    filter:drop-shadow(1px 1px 1px rgb(145, 144, 144))
+
+}
+.search-bar-group button{
+    border-radius:50%;
+    width: 50px;
+   height: 50px;  
+
+
+   
+    background-color:#FF385C;
+}
+.search-text{
+    border-right: 0.5px solid rgba(200, 192, 192, 0.599);
+}
+.seller-btn{
+    border-radius: 5em;
+    height: 5vh;
+    background-color: #ff2a51;
+    color: #ffffff;
 }

@@ -7,13 +7,18 @@ body{
     background-color: #ffffff;
     border-bottom:2px solid rgb(227, 221, 221);
     margin-top: 1vh;
+    min-height: 150px;
+    max-height: 150px;
+   
 }
 .logo{
 
 }
 .search-bar-group{
     border-radius: 5em !important;
-    height: 7vh;
+   
+    min-height: 65px;
+    max-height: 65px;
     width: 25vw;
     
 
@@ -32,7 +37,9 @@ body{
 }
 .seller-btn{
     border-radius: 5em;
-    height: 5vh;
+   
+    min-height: 50px;
+    max-height: 50px;
     background-color: #ff2a51;
     color: #ffffff;
 }
@@ -95,3 +102,4 @@ body{
     letter-spacing: 5px;
     text-align: center;
 }
+

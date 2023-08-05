@@ -1,10 +1,12 @@
 body{
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
-header{
+.header{
     height: 15vh;
     background-color: #ffffff;
     border-bottom:2px solid rgb(227, 221, 221);
+    margin-top: 1vh;
 }
 .logo{
 
@@ -53,3 +55,43 @@ header{
    
     
   }
+.dist{
+    background-color: #ff2a511c;
+    height: 5vh;
+    border-radius:2.3em;
+}
+.area{
+    background-color: #ff2a511c;
+    height: 35vh;
+    border-radius: 1.5em;
+}
+.dist-cont{
+    max-height:35vh ;
+    overflow-y: scroll;
+}
+.dist-cont::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dist-cont::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.dist-cont::-webkit-scrollbar-thumb {
+    background: rgba(168, 163, 163, 0.368); 
+    border-radius: 10px;
+}
+
+.dist-cont::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 163, 163, 0.368);  
+}
+.location-tag-active{
+    background-color:#ff2a51;
+    
+    border-radius: 2.3em;
+    color: #ffffff;
+}
+#form-eff::placeholder{
+    letter-spacing: 5px;
+    text-align: center;
+}

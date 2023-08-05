@@ -186,7 +186,7 @@ function addingDivs(){
     // Create the paragraph element with inline styles
     const paragraph1 = document.createElement('p');
     paragraph1.textContent = 'Location';
-    paragraph1.style.fontSize = '20px';
+    paragraph1.style.fontSize = '16px';
     paragraph1.style.fontWeight = '400';
 
     // Append the paragraph to the inner div
@@ -210,7 +210,7 @@ function addingDivs(){
     // Create the paragraph element with inline styles
     const paragraph2 = document.createElement('p');
     paragraph2.textContent = 'Category';
-    paragraph2.style.fontSize = '20px';
+    paragraph2.style.fontSize = '16px';
 
     // Append the paragraph to the inner div
     innerDiv2.appendChild(paragraph2);

@@ -10,14 +10,15 @@ body{
    
    
 }
-.logo{
-
+.logo svg{
+ min-width: 50px;
+ max-width: 50px;
 }
 .search-bar-group{
     border-radius: 5em !important;
    
-    min-height: 65px;
-    max-height: 65px;
+    min-height: 40px;
+    max-height: 40px;
     width: 25vw;
     
 
@@ -37,8 +38,8 @@ body{
 .seller-btn{
     border-radius: 5em;
    
-    min-height: 50px;
-    max-height: 50px;
+    min-height: 35px;
+    max-height: 35px;
     background-color: #ff2a51;
     color: #ffffff;
 }
@@ -49,7 +50,7 @@ body{
     box-shadow: none;
   }
   .search-categ input {
-  font-size: 25px;
+  font-size: 16px;
   }
   .search-click-effect-active{
    
@@ -101,4 +102,9 @@ body{
     letter-spacing: 5px;
     text-align: center;
 }
-
+#search-btn{
+    max-height:30px ;
+    min-height:30px ;
+    max-width: 30px;
+    min-width: 30px;
+}

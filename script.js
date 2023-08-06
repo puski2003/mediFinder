@@ -131,23 +131,22 @@ function fadeIn() {
     height: ["30vh", "70vh"],
     easing: "easeInOutSine",
     duration: 200,
-  });
-  anime({
-    targets: effectElement1,
-
-    easing: "easeInOutSine",
-    duration: 100,
     begin: () => {
-      document.querySelector(".content-body").classList.remove("step1");
-      document.querySelector(".content-body").classList.add("step2");
       effectElement1.classList.remove("d-none");
-      effectElement2.classList.add("d-none");
-    },
-    complete: () => {
+      effectElement2.classList.add("d-none"); 
       effectElement1.classList.add("d-flex");
       effectElement2.classList.remove("d-flex");
+     
+
+    },
+    complete: () => {
+     
+  
+      
     },
   });
+ 
+  
 }
 function switchEffect() {
   const effectElement1 = document.getElementById("header-3");
@@ -171,12 +170,15 @@ function switchEffect() {
     easing: "easeInOutSine",
     duration: 100,
     begin: () => {
+      
       effectElement2.classList.remove("d-none");
       effectElement1.classList.add("d-none");
     },
     complete: () => {
       effectElement2.classList.add("d-flex");
       effectElement1.classList.remove("d-flex");
+      
+      document.querySelector(".content-body").classList.add("step2");
     },
   });
 }
@@ -352,7 +354,7 @@ function search_anime() {
     anime({
       targets: effectElement,
 
-      easing: "easeInOutSine",
+      easing: "easeInOutQuad",
       duration: 100,
       begin: () => {
         effectElement.classList.remove("d-flex");
@@ -372,10 +374,12 @@ function search_anime() {
     document
       .getElementById("search-bar")
       .classList.remove("search-click-effect-active");
-      document.querySelector(".content-body").classList.remove("step2");
+      
     fadeOut();
     removingInputs();
     addingDivs();
+
+   
   }
 }
 

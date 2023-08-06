@@ -1,4 +1,102 @@
+const swiper = new Swiper('.swiper', {
+  
+  direction: 'horizontal',
+  loop: true,
+  effect: "fade",
+
+
+ 
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+});
+
+
+swiper.on('slideChange', () => {
+  const activeIndex = swiper.activeIndex;
+
+  anime({
+    targets: ".text-1",
+    translateX: [100, 0],
+    duration: 1000,
+  });
+
+  anime({
+    targets: ".bottle1",
+    translateY: [100, 0],
+    duration: 1000,
+  });
+
+  anime({
+    targets: ".text-2",
+    translateY: [100, 0],
+    duration: 1000,
+  });
+
+  anime({
+    targets: ".box",
+    translateX: [100, 0],
+    duration: 1000,
+  });
+
+  anime({
+    targets: ".text-3",
+    translateY: [100, 0],
+    duration: 1000,
+  });
+
+  anime({
+    targets: ".cream1",
+    translateY: [100, 0],
+    duration: 1000,
+  });
+
+  anime.set(".cream2", { rotate: 0 });
+
+  
+  anime({
+    targets: ".cream2",
+    rotate: '1turn',
+    duration: 1000,
+    delay: 200, 
+  });
+});
+
+anime({
+  targets: ".banner-text",
+  translateX: [100, 0],
+  duration: 1000,
+});
+
+anime({
+  targets: ".bottle",
+  translateY: [100, 0],
+  duration: 1000,
+});
+
+
+
+
+
+
+
 document.getElementById("search-bar").addEventListener("click", eventHand);
+
 document.getElementById("form-eff").addEventListener("click", () => {
   document
     .getElementById("search-bar")
@@ -9,7 +107,7 @@ document.getElementById("form-eff").addEventListener("click", () => {
 });
 function eventHand() {
   search_anime();
-
+document.querySelector(".content-body").classList.add("step1");
   document.getElementById("search-bar").removeEventListener("click", eventHand);
   document.getElementById("location-tag").addEventListener("click", fadeIn);
   document
@@ -40,6 +138,8 @@ function fadeIn() {
     easing: "easeInOutSine",
     duration: 100,
     begin: () => {
+      document.querySelector(".content-body").classList.remove("step1");
+      document.querySelector(".content-body").classList.add("step2");
       effectElement1.classList.remove("d-none");
       effectElement2.classList.add("d-none");
     },
@@ -272,6 +372,7 @@ function search_anime() {
     document
       .getElementById("search-bar")
       .classList.remove("search-click-effect-active");
+      document.querySelector(".content-body").classList.remove("step2");
     fadeOut();
     removingInputs();
     addingDivs();

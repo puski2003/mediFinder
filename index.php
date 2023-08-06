@@ -12,7 +12,11 @@ require "connection.php";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
-
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>   
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -21,7 +25,7 @@ require "connection.php";
 </head>
 
 <body>
-    <div class="row  header">
+    <div class="row  header" style="z-index: 2000;">
         <header class="col-12 d-flex  flex-row  justify-content-between align-items-center ">
 
             <div class="logo ms-5">
@@ -83,7 +87,7 @@ require "connection.php";
             </div>
 
         </header>
-        <div class="row d-none justify-content-center " id="header-2" style="height: 5vh;">
+        <div class="row d-none justify-content-center " id="header-2" style="height: 5vh;z-index: 2000;">
             <div class="col-8 d-flex flex-row">
                 <div class="col-6 d-flex justify-content-center">
                     <div class="d-flex justify-content-between col-4 location-tag" style="padding: 20px;height: 4vh;" id="location-tag">
@@ -108,7 +112,7 @@ require "connection.php";
             </div>
 
         </div>
-        <div class="row d-none justify-content-center " id="header-3">
+        <div class="row d-none justify-content-center " id="header-3" style="z-index: 2000;">
             <div class="col-8  d-flex flex-row">
                 <div class="col-6 dist-cont me-3">
 
@@ -260,11 +264,64 @@ require "connection.php";
         </div>
     </div>
     <div id="content-body" class="content-body">
+    <div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide banner1 d-flex justify-content-evenly align-items-center">
+        <div class="banner-text text-1">
+            <h5 style="font-weight: 400;">Pyridoxine Vitamin B6</h5>
+            <h1>Vitamin & <br>Supplements</h1>
+        </div>
+        <div>
+           
+            <img src="images/bottle1.webp" class="bottle bottle1 bot2">
+            <img src="images/bottle.webp" class="bottle  bottle1 bot1">
+
+        </div>
+        
+    </div>
+    <div class="swiper-slide banner2 d-flex justify-content-evenly align-items-center">
+        <div class="banner-text text-2">
+            <h5 style="font-weight: 400;">Pyridoxine Vitamin B6</h5>
+            <h1>Vitamin & <br>Supplements</h1>
+        </div>
+        <div>
+           
+            <img src="images/box1.webp" class="bottle box bot2">
+            <img src="images/box2.webp" class="bottle box bot1">
+
+        </div>
+    </div>
+    <div class="swiper-slide banner3 d-flex justify-content-evenly align-items-center">
+        <div class="banner-text text-3">
+            <h5 style="font-weight: 400;">Pyridoxine Vitamin B6</h5>
+            <h1>Vitamin & <br>Supplements</h1>
+        </div>
+        <div>
+           
+            <img src="images/cream1.webp" class="bottle bot2 cream1">
+            <img src="images/cream2.webp" class="bottle bot1 cream2">
+
+        </div>
+    </div>
+   
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
 
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"> </script>
 </body>

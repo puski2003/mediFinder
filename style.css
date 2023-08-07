@@ -7,7 +7,8 @@ body {
   background-color: #ffffffe6;
   border-bottom: 2px solid rgb(227, 221, 221);
   margin-top: 1vh;
-  position: relative;
+  position: s;
+
   top: 0;
 }
 .logo svg {
@@ -156,7 +157,40 @@ body {
   position: absolute;
   width: 100%; 
   top: 15vh;
+
    
 }
 
 
+.card{
+
+  background-color:white;
+  margin: 10px;
+  border-radius: 2.3em;
+}
+.product-btn{
+  background-color: #ff2a51;
+  border-radius: 2.3em;
+  border: none;
+}
+.product-btn:hover{
+  background-color: white;
+  color: #ff2a51;
+}
+.card-img-top{
+border-radius: 2.3em 2.3em 0em 0em;
+}
+.bannerPart2{
+  height: 50vh;
+  border-radius: 2.3em;
+}
+.bannerPart2-1{
+  background-repeat: no-repeat;
+  border-radius: 2.3em;
+
+  background-size: cover;
+}
+.footer{
+background-color: #d15a70;
+height: 30vh;
+}

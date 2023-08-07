@@ -138,6 +138,7 @@ require "connection.php";
             </div>
 
         </div>
+        <div style="overflow-y: hidden;">
         <div class="row d-none justify-content-center " id="header-3" style="z-index: 2000;">
             <div class="col-8  d-flex flex-row">
                 <div class="col-6 dist-cont me-3">
@@ -311,6 +312,7 @@ require "connection.php";
             </div>
 
 
+        </div>
         </div>
     </div>
     <div id="content-body" class="content-body">

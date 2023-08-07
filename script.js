@@ -110,9 +110,7 @@ function eventHand() {
 document.querySelector(".content-body").classList.add("step1");
   document.getElementById("search-bar").removeEventListener("click", eventHand);
   document.getElementById("location-tag").addEventListener("click", fadeIn);
-  document
-    .getElementById("category-tag")
-    .addEventListener("click", switchEffect);
+  document.getElementById("category-tag").addEventListener("click", switchEffect);
 }
 function fadeIn() {
   const effectElement1 = document.getElementById("header-3");
@@ -144,9 +142,55 @@ function fadeIn() {
   
       
     },
+
+
   });
- 
+  anime({
+    targets:effectElement1,
+    height:['0','37.5vh'],
+    easing: "easeInOutSine",
+    duration: 200,
+  });
+
+  document.getElementById("category-tag").removeEventListener("click", switchEffect);
+  document.getElementById("category-tag").addEventListener("click", FadeIn_switch );
   
+}
+function FadeIn_switch(){
+  const effectElement1 = document.getElementById("header-3");
+    const effectElement2 = document.getElementById("header-4");
+    document.getElementById("cat-svg").setAttribute("fill", "white");
+    document.getElementById("loc-svg").setAttribute("fill", "#ff2a51");
+  
+    const catTag = document.getElementById("category-tag");
+    const locTag = document.getElementById("location-tag");
+    locTag.classList.remove("location-tag-active");
+    catTag.classList.add("location-tag-active");
+    effectElement2.classList.remove("d-none");
+      effectElement1.classList.add("d-none");
+      effectElement2.classList.add("d-flex");
+      effectElement1.classList.remove("d-flex");
+      
+      document.querySelector(".content-body").classList.add("step2");
+      document.getElementById("location-tag").removeEventListener("click", fadeIn);
+      document.getElementById("location-tag").addEventListener("click", switchEffect_switch);
+}
+function switchEffect_switch(){
+  const effectElement1 = document.getElementById("header-3");
+  const effectElement2 = document.getElementById("header-4");
+  document.getElementById("loc-svg").setAttribute("fill", "white");
+  const locTag = document.getElementById("location-tag");
+  locTag.classList.add("location-tag-active");
+
+  document.getElementById("cat-svg").setAttribute("fill", "#ff2a51");
+
+  const catTag = document.getElementById("category-tag");
+  catTag.classList.remove("location-tag-active");
+  effectElement1.classList.remove("d-none");
+  effectElement2.classList.add("d-none"); 
+  effectElement1.classList.add("d-flex");
+  effectElement2.classList.remove("d-flex");
+  ;
 }
 function switchEffect() {
   const effectElement1 = document.getElementById("header-3");
@@ -180,7 +224,20 @@ function switchEffect() {
       
       document.querySelector(".content-body").classList.add("step2");
     },
+    
   });
+  anime({
+    targets:effectElement2,
+    height:['0','37.5vh'],
+    easing: "easeInOutSine",
+    duration: 200,
+  });
+  document.getElementById("category-tag").removeEventListener("click", switchEffect);
+  document.getElementById("category-tag").addEventListener("click", FadeIn_switch );
+  document.getElementById("location-tag").removeEventListener("click", fadeIn);
+  document.getElementById("location-tag").addEventListener("click", switchEffect_switch);
+  
+
 }
 function fadeOut() {
   const effectElement1 = document.getElementById("header-3");
@@ -378,7 +435,8 @@ function search_anime() {
     fadeOut();
     removingInputs();
     addingDivs();
-
+    document.getElementById("location-tag").addEventListener("click", fadeIn);
+    document.getElementById("category-tag").addEventListener("click", switchEffect);
    
   }
 }

@@ -1,3 +1,4 @@
+// slider
 const swiper = new Swiper('.swiper', {
   
   direction: 'horizontal',
@@ -90,10 +91,10 @@ anime({
 });
 
 
+//
 
 
-
-
+//header
 
 document.getElementById("search-bar").addEventListener("click", eventHand);
 
@@ -453,9 +454,75 @@ function cityLoad(id) {
       city.classList.remove("d-flex");
       city.classList.add("pt-3");
       document.getElementById("city_area").innerHTML = t;
+      districtSelect(id);
     }
   };
 
   r.open("GET", "cityLoadProcess.php?did=" + id, true);
   r.send();
 }
+function  districtSelect(evt){
+  function cityLoad(id) {
+    var city = document.getElementById("city_area");
+    var r = new XMLHttpRequest();
+  
+    r.onreadystatechange = function () {
+      if (r.readyState == 4) {
+        var t = r.responseText;
+        city.classList.remove("justify-content-center");
+        city.classList.remove("align-items-center");
+        city.classList.remove("d-flex");
+        city.classList.add("pt-3");
+        document.getElementById("city_area").innerHTML = t;
+        districtSelect(id);
+      }
+    };
+  
+    r.open("GET", "cityLoadProcess.php?did=" + id, true);
+    r.send();
+  }
+ 
+  
+}
+
+function districtSelect(evt) {
+  var divId = 'dis-' + evt;
+  var districts = document.querySelectorAll('.districts');
+  
+  districts.forEach(function (element) {
+    var elementId = element.getAttribute('id');
+    var innerDiv1 = element.querySelector('.bi.bi-arrow-right-circle');
+    var innerDiv2 = element.querySelector('.bi.bi-arrow-right-circle-fill');
+    if (elementId === divId) {
+      
+      innerDiv1.classList.add("d-none");
+      innerDiv2.classList.remove("d-none");
+    } else {
+      
+      innerDiv1.classList.remove("d-none");
+      innerDiv2.classList.add("d-none");
+    }
+  });
+}
+function AreaActive(evt){
+
+  var divId = 'area-' + evt;
+  var areas = document.querySelectorAll('.areaList');
+  
+  areas.forEach(function (element) {
+    var elementId = element.getAttribute('id');
+    var innerDiv = element.querySelector('.dist-area');
+
+    if (elementId === divId) {
+      
+      innerDiv.classList.add("dist-active");
+      innerDiv.classList.remove("dist");
+    } else {
+      
+      innerDiv.classList.remove("dist-active");
+      innerDiv.classList.add("dist");
+    }
+  });
+
+}
+//

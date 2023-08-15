@@ -526,3 +526,61 @@ function AreaActive(evt){
 
 }
 //
+// login 
+function loginSwift(){
+
+anime({
+  targets:'.login-back',
+  translateX:['100%','0%'], 
+  translateY:['-100%','-100%'],
+  duration: 500,
+  easing: 'easeInOutQuad',
+
+});
+anime({
+  targets:'.signup-back',
+  translateX:['-100%','0%'], 
+  translateY:['-100%','-100%'],
+  duration: 500,
+  easing: 'easeInOutQuad',
+  begin:()=>{
+    document.querySelector(".signup-back").style.borderRadius=" 0 1.3em 1.3em 0";
+  }
+
+});
+
+
+
+
+
+};
+function SignUpSwift(){
+
+  anime({
+    targets:'.login-back',
+    translateX:['0%','100%'], 
+    translateY:['-100%','-100%'],
+    duration: 500,
+    easing: 'easeInOutQuad',
+  
+  });
+  anime({
+    targets:'.signup-back',
+    translateX:['0%','-100%'], 
+    translateY:['-100%','-100%'],
+    duration: 500,
+    easing: 'easeInOutQuad',
+    complete:()=>{
+      document.querySelector(".signup-back").style.borderRadius=" 0 0 0 0";
+    }
+  
+  });
+  
+  
+  
+  
+  
+  };
+
+
+//

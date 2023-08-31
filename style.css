@@ -1,12 +1,17 @@
 body {
   font-family: "Roboto", sans-serif;
+
   overflow-x: hidden;
+  margin: 0px;
+  border: 0px;
+  box-sizing: border-box;
 }
 .header {
   height: 15vh;
   background-color: #ffffffe6;
   border-bottom: 2px solid rgb(227, 221, 221);
   margin-top: 1vh;
+  margin-right: 0;
  
 
 
@@ -224,6 +229,15 @@ border-radius: 2em;
 
 
 }
+.login-head-mob{
+  text-align: center;
+
+  margin-bottom: 5vh;
+ 
+
+
+}
+
 .wrap-input100 {
   width: 100%;
   position: relative;
@@ -232,7 +246,7 @@ border-radius: 2em;
 }
 
 .input100 {
-  font-family: Poppins-Regular;
+ 
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -287,6 +301,14 @@ textarea:-ms-input-placeholder { color: #fff;}
   padding: 15px;
 
 }
+.login-btn-mob{
+  background-color: #ff2a51;
+  border: 0;
+  border-radius: 2.3em;
+  color: #ffffff;
+  padding: 8px;
+
+}
 .signup-btn{
   background-color: #ff2a51;
   border: 2px solid white;
@@ -317,6 +339,7 @@ box-shadow: 0 5px 10px grey;
 border-radius: 1.3em 0 0 1.3em;
  
 }
+
 .login-back{
   text-align: center;
   color: #ffffff;
@@ -338,4 +361,37 @@ box-shadow: 0 5px 10px grey;
   
   transform: translateY(-100%) translateX(-100%) ;
   background-color: #ffffff;
+}
+.search-bar-nav{
+  width: 100%;
+  
+  
+}
+
+  
+.search-bar-group-nav{
+  border-radius: 5em !important;
+  min-height: 40px;
+  
+  max-height: 40px;
+  width: 100%;
+}
+.search-bar-group-nav button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  background-color: #ff385c;
+}
+.offcanvas {
+  border-radius: 1.3em 0 0 1.3em;
+}
+.search-bar-nav-container{
+  background-color: #ffffff;
+}
+.area-mob{
+  transform: translateY(-70%) translateX(100%);
+}
+#map{
+  height: 20vh;
 }

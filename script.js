@@ -95,6 +95,8 @@ anime({
 
 
 //header
+var isHeading3On="no";
+
 
 document.getElementById("search-bar").addEventListener("click", eventHand);
 
@@ -114,6 +116,7 @@ document.querySelector(".content-body").classList.add("step1");
   document.getElementById("category-tag").addEventListener("click", switchEffect);
 }
 function fadeIn() {
+  isHeading3On="yes"
   const effectElement1 = document.getElementById("header-3");
   const effectElement2 = document.getElementById("header-4");
   document.getElementById("loc-svg").setAttribute("fill", "white");
@@ -249,12 +252,17 @@ function fadeOut() {
   const catTag = document.getElementById("category-tag");
   locTag.classList.remove("location-tag-active");
   catTag.classList.remove("location-tag-active");
-  anime({
-    targets: ".header",
-    height: ["70vh", "30vh"],
-    easing: "easeInOutQuad",
-    duration: 200,
-  });
+  if(isHeading3On=="yes"){
+    anime({
+      targets: ".header",
+      height: ["70vh", "30vh"],
+      easing: "easeInOutQuad",
+      duration: 200,
+    });
+
+  }
+  
+  
   anime({
     targets: effectElement1,
 
@@ -279,6 +287,7 @@ function fadeOut() {
       effectElement2.classList.add("d-none");
     },
   });
+  isHeading3On="no";
 }
 
 function addingInput() {
@@ -442,8 +451,16 @@ function search_anime() {
   }
 }
 
-function cityLoad(id) {
+function cityLoad(id,isMob) {
   var city = document.getElementById("city_area");
+  
+  var city_mob = document.getElementById("city_area_mob");
+  if(isMob=="yes"){
+    slidingEffectMobLoc();
+    
+   
+  }
+
   var r = new XMLHttpRequest();
 
   r.onreadystatechange = function () {
@@ -454,6 +471,11 @@ function cityLoad(id) {
       city.classList.remove("d-flex");
       city.classList.add("pt-3");
       document.getElementById("city_area").innerHTML = t;
+      city_mob.classList.remove("justify-content-center");
+      city_mob.classList.remove("align-items-center");
+      city_mob.classList.remove("d-flex");
+      city_mob.classList.add("pt-3");
+      document.getElementById("area_mob_content").innerHTML = t;
       districtSelect(id);
     }
   };
@@ -461,29 +483,7 @@ function cityLoad(id) {
   r.open("GET", "cityLoadProcess.php?did=" + id, true);
   r.send();
 }
-function  districtSelect(evt){
-  function cityLoad(id) {
-    var city = document.getElementById("city_area");
-    var r = new XMLHttpRequest();
-  
-    r.onreadystatechange = function () {
-      if (r.readyState == 4) {
-        var t = r.responseText;
-        city.classList.remove("justify-content-center");
-        city.classList.remove("align-items-center");
-        city.classList.remove("d-flex");
-        city.classList.add("pt-3");
-        document.getElementById("city_area").innerHTML = t;
-        districtSelect(id);
-      }
-    };
-  
-    r.open("GET", "cityLoadProcess.php?did=" + id, true);
-    r.send();
-  }
- 
-  
-}
+
 
 function districtSelect(evt) {
   var divId = 'dis-' + evt;
@@ -506,12 +506,14 @@ function districtSelect(evt) {
 }
 function AreaActive(evt){
 
+
   var divId = 'area-' + evt;
   var areas = document.querySelectorAll('.areaList');
   
   areas.forEach(function (element) {
     var elementId = element.getAttribute('id');
     var innerDiv = element.querySelector('.dist-area');
+    
 
     if (elementId === divId) {
       
@@ -523,6 +525,9 @@ function AreaActive(evt){
       innerDiv.classList.add("dist");
     }
   });
+  
+ 
+  
 
 }
 //
@@ -581,6 +586,33 @@ function SignUpSwift(){
   
   
   };
+  function slidingEffectMobLoc(){
+    anime({
+      targets:'.loc_mob',
+      translateX:['0%','-100%'],
+      duration:300,
+      easing:"easeInOutQuad"
 
+    })
+  }
+  function slidingEffectMobLoc_reverse(){
+    anime({
+      targets:'.loc_mob',
+      translateX:['-100%','-0%'],
+      duration:300,
+      easing:"easeInOutQuad"
 
+    })
+  }
+
+ function  LocModal(){
+  var m = document.getElementById("mob-loc-modal")
+  var bm =new bootstrap.Modal(m);
+  bm.show();
+
+ }
 //
+function mob_login_btn(){
+  document.getElementById("mob-login").classList.toggle("d-none");
+  document.getElementById("mob-signup").classList.toggle("d-none");
+}

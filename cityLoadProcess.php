@@ -8,7 +8,7 @@ if (isset($_GET["did"])) {
     for ($x = 0; $x < $city_num; $x++) {
         $city_data = $city_rs->fetch_assoc();
 ?>
-        <div class="row d-flex justify-content-center align-items-center areaList" onclick="AreaActive('<?php echo $city_data['name'] ?>');"  id="area-<?php echo $city_data["name"] ?>">
+        <div class="row d-flex justify-content-center align-items-center areaList"data-bs-dismiss="modal" aria-label="Close" onclick="AreaActive('<?php echo $city_data['name'] ?>');"  id="area-<?php echo $city_data["name"] ?>">
             <p class="col-10 dist dist-area pt-2"><?php echo $city_data["name"] ?></p>
             
         </div>

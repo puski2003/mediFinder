@@ -395,3 +395,144 @@ box-shadow: 0 5px 10px grey;
 #map{
   height: 20vh;
 }
+.pharm-card{
+  height: 180px;
+  min-height: 180px;
+  max-height: 200px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.118);
+  background-color: #ffffff;
+  border-radius: 1.3em;
+  
+ 
+
+}
+.pham-logo{
+  background-position: center;
+  background-size: contain;
+  height: 15vh;
+  background-repeat: no-repeat;
+}
+.pham-desc{
+  font-size: 16px;
+  font-weight: 800;
+  color: #615b5c;
+}
+.pham-address{
+  font-size: 15px;
+  font-weight: 400;
+}
+.rating {
+  font-size: 16px;
+  margin-top: -20px;
+}
+
+.clicked {
+  color: rgb(208, 218, 18);
+}
+.pham-contact{
+  background-color: #ff385c;
+  color:white;
+  border-radius: 2em !important;
+}
+.stock-avalaiblity{
+  display: flex;
+  font-weight: 400;
+  color: rgb(64, 195, 38);
+  justify-content: center;
+  align-items: center;
+  border: solid 1px rgb(64, 195, 38);
+  border-radius: 1em;
+}
+.request-btn{
+  background-color:#ff385c ;
+  color: white;
+  border-radius: 1em;
+}
+.request-btn:hover{
+  background-color:#ff385c ;
+  color: white;
+  border-radius: 1em;
+}
+.med-container{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  font-weight: 800;
+  color: #615b5c;
+  
+  background-color: #ffffff;
+  border-radius: 0 0 1.3em 1.3em;
+}
+.med-name{
+  font-size: 26px;
+  color: #ff385c;
+}
+.med-dis{
+  font-weight: 400;
+  font-size: 15px;
+}
+.med-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 30vh;
+}
+.med-dis-container{
+ display: flex;
+ justify-content: center;
+  border-radius: 0.8em ;
+  margin-top: 20px;
+ 
+}
+.med-brands{
+  
+ 
+  color:#615b5c;
+  display: flex;
+  font-weight: 800;
+  
+  align-items: center;
+}
+
+
+.custom-shape-divider-bottom-1693497833 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1693497833 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 89px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1693497833 .shape-fill {
+    fill: #F85D82;
+}
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1693497833 svg {
+      width: calc(100% + 1.3px);
+      height: 45px;
+  }
+}
+@media (max-width: 360px) {
+ .pham-address{
+  font-size: 12px;
+ }.pharm-card{
+  height: 190px;
+ }
+}
+.bi-telephone-fill {
+  min-width: 16px; 
+  height: 16px; 
+}

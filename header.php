@@ -63,7 +63,7 @@ require "connection.php";
 
                     </div>
                     <div class="btn-container">
-                        <button class="btn col-2" id="search-btn">
+                        <button class="btn col-2" id="search-btn" onclick="search();">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search " style="margin-left: -6px; margin-top: -7px;" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
@@ -162,106 +162,36 @@ require "connection.php";
             <div class="row d-none justify-content-center " id="header-4">
                 <div class="col-8  d-flex flex-row">
                     <div class="col-6 dist-cont me-3">
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
+                        <!-- for loop for category -->
+                        <?php
+                        $cat_rs = Database::search("SELECT * FROM `category`");
+                        $cat_num = $cat_rs->num_rows;
 
-
-
-                                <p class="pt-3 col-6" style="font-size: 16px;">Categary</p>
+                        for ($x = 0; $x < $cat_num; $x++) {
+                            $cat_data = $cat_rs->fetch_assoc();
+                        ?>
+                           <div class=" col-12 pt-3">
+                            <div class="dist col-10 d-flex justify-content-center align-items-center" onclick='loadCat("<?php echo $cat_data["id"] ?>");'>
+                                <p class="pt-3 col-6" style="font-size: 16px;"><?php echo $cat_data["name"]?></p>
                                 <div class="col-4 d-flex justify-content-end">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
                                     </svg>
                                 </div>
-
                             </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class=" col-12 pt-3">
-                            <div class="dist col-10 d-flex justify-content-center align-items-center">
-                                <p class="pt-3 col-6" style="font-size: 16px;">Category 1</p>
-
-                                <div class="col-4 d-flex justify-content-end">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ff2a51" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                                    </svg>
-                                </div>
-
-                            </div>
-                        </div>
+                        </div> 
+                        <?php
+                        }
+                        ?>
+                        
+                        
 
                     </div>
                     <div class="col-6 ms-3 ">
-                        <div class="col-12 area d-flex justify-content-center align-items-center " style="margin-top: 16px;">
+                        <div class="col-12 area d-flex justify-content-center align-items-center" id="cat_area" style="margin-top: 16px;">
                             <p style="font-size: 16px; font-weight: 400 ;color: #ff2a51; letter-spacing: 3px;">Select the
                                 Category</p>
                         </div>
-
                     </div>
                 </div>
 

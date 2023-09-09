@@ -46,6 +46,9 @@ body {
   background-color: #ff2a51;
   color: #ffffff;
 }
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 .content-body {
   height: 100vh;
 }

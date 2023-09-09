@@ -13,7 +13,7 @@ require "connection.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"        rel="stylesheet" />
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
@@ -95,7 +95,7 @@ require "connection.php";
 
 
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -156,7 +156,7 @@ require "connection.php";
 
                     </div>
                     <div class="btn-container">
-                        <button class="btn col-2" id="search-btn">
+                        <button class="btn col-2" id="search-btn" onclick="SearchMed();">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search " style="margin-left: -6px; margin-top: -7px;" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
@@ -166,15 +166,29 @@ require "connection.php";
 
                 </div>
             </div>
-            <div class="pe-4 btn-group seller-btn me-5 d-none d-sm- none d-md-flex d-lg-flex" style="background-color: #ff2a51;">
-                <button class="btn  seller-btn" style="font-size: 16px; font-weight:400;">Account</button>
-                <div style="background-color: #ff2a51;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-person-fill mt-2" style="background-color: #ff2a51;" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                    </svg>
-                </div>
 
+            <div class="dropdown">
+                <div class="pe-4 btn-group seller-btn me-5 d-none d-sm-none d-md-flex d-lg-flex " id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false" style="background-color: #ff2a51;" id="seller-btn">
+                    <button class="btn seller-btn " style="font-size: 16px; font-weight: 400;" type="button">
+                        Log In
+                    </button>
+                    <div style="background-color: #ff2a51;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-person-fill mt-2" style="background-color: #ff2a51;" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <ul class="dropdown-menu mt-5" aria-labelledby="dropdownMenuButton">
+
+                            <li><a class="dropdown-item" href="#">Item 1</a></li>
+                            <li><a class="dropdown-item" href="#">Item 2</a></li>
+                            <li><a class="dropdown-item" href="#">Item 3</a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
+
             <button class="navbar-toggler mx-2 d-lg-none d-md-none d-sm-flex d-flex " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill=" #ff2a51" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />

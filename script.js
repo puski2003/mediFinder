@@ -1,4 +1,5 @@
 // slider
+
 const swiper = new Swiper('.swiper', {
   
   direction: 'horizontal',
@@ -504,9 +505,10 @@ function districtSelect(evt) {
     }
   });
 }
-function AreaActive(evt){
+var Location_id="";
+function AreaActive(evt,loct){
 
-
+  Location_id=loct;
   var divId = 'area-' + evt;
   var areas = document.querySelectorAll('.areaList');
   
@@ -615,4 +617,20 @@ function SignUpSwift(){
 function mob_login_btn(){
   document.getElementById("mob-login").classList.toggle("d-none");
   document.getElementById("mob-signup").classList.toggle("d-none");
+}
+function SearchMed(){
+  
+  var Medicine_name= document.getElementById("form-eff").value; 
+  var  form = new FormData();
+  form.append("Med_name",Medicine_name);
+  form.append("city_id",Location_id);  
+ 
+  var xhr = new XMLHttpRequest()
+  xhr.onload= function () {
+  
+   alert(xhr.response);
+ document.getElementById("search_container").innerHTML=""+xhr.response+"";
+  }
+  xhr.open("POST", "searchMed.php", true);
+  xhr.send(form);
 }
